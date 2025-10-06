@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 250,
+  "title": { "text": "Average Annual Rainfall in Australia (2007–2017)" },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kaiheuheu/3179_DV2/refs/heads/main/data/weatherAUS_rainfall_prediction_dataset_cleaned.csv"
+  },
+  "transform": [
+    {
+      "calculate": "year(datum.Date)",
+      "as": "Year"
+    }
+  ],
+  "mark": { "type": "bar" },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": { "labelAngle": 0 }
+    },
+    "y": {
+      "aggregate": "mean",
+      "field": "Rainfall",
+      "type": "quantitative",
+      "title": "Average Rainfall (mm)"
+    },
+    "color": {
+      "aggregate": "mean",
+      "field": "Rainfall",
+      "type": "quantitative",
+      "title": "Avg Rainfall (mm)",
+      "scale": { "scheme": "blues" }
+    },
+    "tooltip": [
+      { "field": "Year", "type": "ordinal" },
+      {
+        "aggregate": "mean",
+        "field": "Rainfall",
+        "type": "quantitative",
+        "title": "Avg Rainfall (mm)",
+        "format": ".3g"
+      }
+    ]
+  },
+  "config": {
+    "axis": { "labelFontSize": 12, "titleFontSize": 14 },
+    "bar": { "cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4 }
+  }
+}
