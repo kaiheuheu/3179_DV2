@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Horizontal lollipop chart of top 10 industries by CO2 emissions in 2018.",
-  "width": 600,
-  "height": 400,
+  "width": 350,
+  "height": 225,
   "data": {
     "url": "https://raw.githubusercontent.com/kaiheuheu/3179_DV2/refs/heads/main/data/04_CO2_Emissions_Emissions_Intensities_and_Emissions_Multipliers.csv",
     "format": { "type": "csv" }
@@ -10,6 +10,7 @@
   "transform": [
     { "filter": "datum.Indicator == 'CO2 emissions'" },
     { "calculate": "toNumber(datum['2018'])", "as": "Emissions2018" },
+    { "calculate": "'2018'", "as": "Year" },
     {
       "window": [{ "op": "rank", "as": "rank" }],
       "sort": [{ "field": "Emissions2018", "order": "descending" }]
@@ -21,7 +22,7 @@
       "mark": {
         "type": "rule",
         "strokeWidth": 2,
-        "color": "#63b3ed"
+        "color": "#e25822"
       },
       "encoding": {
         "y": {
@@ -30,12 +31,25 @@
           "sort": { "field": "Emissions2018", "order": "descending" },
           "title": "Industry"
         },
-        "x": { "value": 0 },
-        "x2": { "field": "Emissions2018" }
+        "x": {
+          "field": "Emissions2018",
+          "type": "quantitative",
+          "scale": { "domain": [0, 200] }
+        },
+        "x2": { "value": 0 },
+        "tooltip": [
+          { "field": "Industry", "type": "nominal" },
+          { "field": "Year", "type": "nominal" },
+          {
+            "field": "Emissions2018",
+            "type": "quantitative",
+            "title": "CO₂ Emissions"
+          }
+        ]
       }
     },
     {
-      "mark": { "type": "circle", "size": 150, "color": "#63b3ed" },
+      "mark": { "type": "circle", "size": 150, "color": "#e25822" },
       "encoding": {
         "y": {
           "field": "Industry",
@@ -45,27 +59,19 @@
         "x": {
           "field": "Emissions2018",
           "type": "quantitative",
-          "title": "CO₂ Emissions (2018)"
+          "title": "CO₂ Emissions",
+          "scale": { "domain": [0, 200] }
         },
         "tooltip": [
           { "field": "Industry", "type": "nominal" },
+          { "field": "Year", "type": "nominal" },
           {
             "field": "Emissions2018",
             "type": "quantitative",
-            "title": "CO₂ Emissions (2018)"
+            "title": "CO₂ Emissions"
           }
         ]
       }
     }
-  ],
-  "config": {
-    "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 14,
-      "labelColor": "#f0f0f0",
-      "titleColor": "#f0f0f0"
-    },
-    "background": "#1a1a1a",
-    "view": { "stroke": "transparent" }
-  }
+  ]
 }

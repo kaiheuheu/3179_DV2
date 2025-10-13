@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 250,
+  "title": {
+    "text": "Bushfire Footprint: Area Burned Over the Years (1990-2020)"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kaiheuheu/3179_DV2/refs/heads/main/data/australian_annual_bushfire_area_(19902020).csv"
+  },
+  "mark": { "type": "area" },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year",
+      "axis": {
+        "labelAngle": 0,
+        "labelExpr": "datum.value % 5  === 0 ? datum.value : ''"
+      }
+    },
+    "y": {
+      "field": "Total_fire_area",
+      "type": "quantitative",
+      "scale": { "domain": [0, 70] },
+      "title": "Total Fire Area (million hectares)"
+    },
+    "color": { "value": "#d73027" },
+    "tooltip": [
+      { "field": "Year", "type": "ordinal" },
+      {
+        "field": "Total_fire_area",
+        "type": "quantitative",
+        "title": "Total Area Burned (Mha)",
+        "format": ".3g"
+      }
+    ]
+  },
+  "config": {
+    "axis": { "labelFontSize": 12, "titleFontSize": 14 }
+  }
+}

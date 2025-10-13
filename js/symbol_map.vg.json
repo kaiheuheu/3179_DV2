@@ -1,12 +1,28 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1200,
-  "height": 825,
+  "width": 1100,
+  "height": 700,
+  "title": {
+    "text": "Where Fires Burn Brightest: Satellite-Detected Bushfire Intensity"
+  },
   "projection": { "type": "mercator" },
+  "params": [
+    {
+      "name": "brightness_min",
+      "value": 200,
+      "bind": {
+        "input": "range",
+        "min": 200,
+        "max": 365,
+        "step": 1,
+        "name": "Minimum Brightness: "
+      }
+    }
+  ],
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/kaiheuheu/3179_DV2/refs/heads/main/data/ne_50m.json",
+        "url": "https://raw.githubusercontent.com/kaiheuheu/3179_HW10/refs/heads/main/data/ne_50m.json",
         "format": {
           "type": "topojson",
           "feature": "ne_50m_admin_1_states_provinces"
@@ -16,7 +32,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/kaiheuheu/3179_DV2/refs/heads/main/data/bushfires_cleaned.csv",
+        "url": "https://raw.githubusercontent.com/kaiheuheu/3179_DV2/refs/heads/main/data/fireDataCleaned.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -26,10 +42,12 @@
           }
         }
       },
-      "mark": {
-        "type": "circle",
-        "opacity": 0.5
-      },
+      "transform": [
+        {
+          "filter": "datum.bright_ti4 >= brightness_min"
+        }
+      ],
+      "mark": { "type": "circle", "opacity": 0.7 },
       "encoding": {
         "longitude": { "field": "longitude", "type": "quantitative" },
         "latitude": { "field": "latitude", "type": "quantitative" },
@@ -38,11 +56,7 @@
           "field": "bright_ti4",
           "type": "quantitative",
           "title": "Brightness",
-          "scale": {
-            "scheme": "reds",
-            "reverse": true
-          },
-          "legend": null
+          "scale": { "domain": [200, 375], "scheme": "reds", "reverse": true }
         },
         "tooltip": [
           {

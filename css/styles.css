@@ -1,7 +1,7 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
   margin: 40px;
-  background-color: #fafafa;
+  background-color: #f7f7f7;
   color: #222;
 }
 
@@ -24,7 +24,11 @@ h2 {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  gap: 20px; /* space between chart and text */
+  gap: 10px; /* space between chart and text */
+}
+
+.chart2 {
+  flex: 0 0 35%; /* chart takes 35% of container width */
 }
 
 .chart {
@@ -36,6 +40,11 @@ h2 {
   padding: 0;
 }
 
+.text2 {
+  flex: 0 0 100%; /* text takes 28% of container width */
+  padding: 0;
+}
+
 #symbol_map {
   display: flex;
   margin-top: 40px;
@@ -43,4 +52,5 @@ h2 {
   max-width: 100%;
   margin-left: auto; /* center horizontally */
   margin-right: auto; /* center horizontally */
+  margin-bottom: 60px;
 }

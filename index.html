@@ -31,6 +31,7 @@
         </p>
       </div>
     </div>
+
     <div class="container">
       <div id="temperature_chart" class="chart"></div>
       <div class="text">
@@ -41,7 +42,36 @@
         </p>
       </div>
     </div>
+
+    <div class="container">
+      <div id="bushfire_chart" class="chart"></div>
+      <div class="text">
+        <h2>Growing fires in Australia</h2>
+        <p>
+          Blahblahblah blah blahblah blah blah blah blahh. Blahhblahblah blah
+          blah blah blahh. Blahhblahblah blah blah blah blahh. Blahhblahblah
+          blah blah blah blahh. Blahhblahblah blah blah blah blahh. Blahh.
+        </p>
+      </div>
+    </div>
+
     <div id="symbol_map"></div>
+
+    <div class="container">
+      <div class="text2">
+        <h2>How is Australia doing in the global context?</h2>
+        <p>
+          CO2 emissions have been something Australia has been trying to reduce
+          and we can see the top emission producing industries and how Australia
+          has fared as compared to other global leading economies in the world.
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="bubble_plot" class="chart2"></div>
+      <div id="industry_emissions" class="chart2"></div>
+    </div>
 
     <script type="text/javascript">
       // Embed Rainfall Plot
@@ -60,12 +90,31 @@
         })
         .catch(console.error);
 
+      // Embed Bushfire_area Plot
+      var bushfireSpec = "js/bushfire_area.json";
+      vegaEmbed("#bushfire_chart", bushfireSpec)
+        .then(function (result) {
+          // Vega view instance accessible as result.view
+        })
+        .catch(console.error);
+
       // Embed Proportional Symbol Map
       var mapSpec = "js/symbol_map.vg.json";
       vegaEmbed("#symbol_map", mapSpec)
         .then(function (result) {
           // Vega view instance accessible as result.view
         })
+        .catch(console.error);
+      // Embed Bubble Plot
+      var bubbleSpec = "js/bubble_plot.json";
+      vegaEmbed("#bubble_plot", bubbleSpec)
+        .then(function (result) {})
+        .catch(console.error);
+
+      // Embed Industry Emissions Plot
+      var industrySpec = "js/industry_emissions.json";
+      vegaEmbed("#industry_emissions", industrySpec)
+        .then(function (result) {})
         .catch(console.error);
     </script>
   </body>

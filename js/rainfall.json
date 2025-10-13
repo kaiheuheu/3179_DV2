@@ -12,7 +12,7 @@
       "as": "Year"
     }
   ],
-  "mark": { "type": "bar" },
+  "mark": { "type": "line" },
   "encoding": {
     "x": {
       "field": "Year",
@@ -26,13 +26,7 @@
       "type": "quantitative",
       "title": "Average Rainfall (mm)"
     },
-    "color": {
-      "aggregate": "mean",
-      "field": "Rainfall",
-      "type": "quantitative",
-      "title": "Avg Rainfall (mm)",
-      "scale": { "scheme": "blues" }
-    },
+    "color": { "value": "#63b3ed" },
     "tooltip": [
       { "field": "Year", "type": "ordinal" },
       {

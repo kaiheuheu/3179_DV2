@@ -89,25 +89,20 @@
       "title": "Year",
       "axis": {
         "labelAngle": 0,
-        "labelExpr": "datum.value % 7 === 1 ? datum.value : ''"
+        "labelExpr": "datum.value % 7  === 1 ? datum.value : ''"
       }
     },
-
     "y": {
       "field": "TempChangeNum",
       "type": "quantitative",
       "title": "Temperature Change (°C)"
     },
     "color": {
-      "field": "TempChangeNum",
-      "type": "quantitative",
-      "scale": {
-        "domain": [-0.52, 1.45],
-        "domainMid": 0,
-        "range": ["#238b45", "#f7f7f7", "#cb181d"],
-        "interpolate": "rgb"
-      },
-      "title": "Temperature Change"
+      "condition": [
+        { "test": "datum.TempChangeNum > 0", "value": "#d73027" },
+        { "test": "datum.TempChangeNum < 0", "value": "#238b45" }
+      ],
+      "value": "#f7f7f7"
     },
     "tooltip": [
       { "field": "Year", "type": "ordinal" },
