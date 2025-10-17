@@ -17,105 +17,212 @@
   <body>
     <h1>Australia in a Warming World: Rain, Fire, and Carbon</h1>
 
+    <!-- Rainfall -->
     <div class="container">
-      <div id="rainfall_chart" class="chart"></div>
+      <div class="chart-wrapper">
+        <div id="rainfall_chart" class="chart"></div>
+        <p class="source">
+          Source: Sandhya Palaniappan. Rainfall Prediction Dataset (Cleaned
+          WeatherAUS) — Adapted from the Australian Bureau of Meteorology.<br />
+          <a
+            href="https://www.kaggle.com/datasets/sandhyapalaniappan/rainfall-prediction-dataset-cleaned-weatheraus"
+            target="_blank"
+          >
+            Kaggle
+          </a>
+        </p>
+      </div>
       <div class="text">
         <h2>Understanding Rainfall Trends</h2>
         <p>
-          This section explores the changing rainfall patterns across Australia
-          between 2007 and 2017. Observing fluctuations in precipitation over
-          this decade helps us understand the growing variability of Australia's
-          climate. Such insights are essential in contextualising the increasing
-          severity and frequency of bushfires, which are further visualised
-          below.
+          Across Australia, average rainfall has declined from around 3.3 mm to
+          2.5 mm between 2007 and 2017. <br />This shift may seem small, but it
+          reflects broader changes in regional weather systems and the
+          hydrological cycle.<br />
+          Rainfall is one of the most visible indicators of Australia’s climate
+          balance and while it is not the only factor influencing bushfires,
+          declining precipitation contributes to drier vegetation and soil,
+          which together create the conditions for larger and more frequent
+          fires. <br />Tracking rainfall over time helps us identify how
+          Australia’s changing climate is reshaping both ecosystems and fire
+          risk.
         </p>
       </div>
     </div>
 
+    <!-- Temperature -->
     <div class="container">
-      <div id="temperature_chart" class="chart"></div>
+      <div class="chart-wrapper">
+        <div id="temperature_chart" class="chart"></div>
+        <p class="source">
+          Source: International Monetary Fund (IMF). Macroeconomic Climate
+          Indicators Dashboard.<br />
+          <a
+            href="https://climatedata.imf.org/pages/country-data"
+            target="_blank"
+          >
+            climatedata.imf.org</a
+          >
+        </p>
+      </div>
       <div class="text">
         <h2>Changing Temperatures in Australia</h2>
         <p>
-          This section explores the changing surface temperature over time in
-          Australia.
+          Since the 1960s, Australia’s surface temperatures have climbed
+          steadily, with recent decades showing the sharpest rise on record.<br />
+          This long-term warming trend is consistent with global patterns driven
+          by greenhouse gas accumulation in the atmosphere.<br />
+          The impacts are visible everywhere, from record-breaking heatwaves to
+          altered rainfall timing and reduced water availability.<br />
+          As climate change continues, the question is no longer whether human
+          activity contributes, but how effectively we can adapt and reduce our
+          collective impact.<br />
+          Australia’s response today will shape its environmental resilience for
+          generations to come.
         </p>
       </div>
     </div>
 
+    <!-- Bushfire -->
     <div class="container">
-      <div id="bushfire_chart" class="chart"></div>
+      <div class="chart-wrapper">
+        <div id="bushfire_chart" class="chart"></div>
+        <p class="source">
+          Source: Johnathan Smith 7528. Annual Area Burned by Bushfires in
+          Australian Climate Zones (19902020). Compiled from ABARES, IBRA, and
+          the Australian Government Department of Climate Change, Energy, the
+          Environment and Water.<br />
+          <a
+            href="https://www.dcceew.gov.au/climate-change/publications/estimating-greenhouse-gas-emissions-from-bushfires-in-australias-temperate-forests-focus-on-2019-20"
+            target="_blank"
+          >
+            dcceew.gov.au</a
+          >
+        </p>
+      </div>
       <div class="text">
-        <h2>Growing fires in Australia</h2>
+        <h2>Growing Fires in Australia</h2>
         <p>
-          Blahblahblah blah blahblah blah blah blah blahh. Blahhblahblah blah
-          blah blah blahh. Blahhblahblah blah blah blah blahh. Blahhblahblah
-          blah blah blah blahh. Blahhblahblah blah blah blah blahh. Blahh.
+          Between 1990 and 2020, the total land area burned by bushfires has
+          nearly doubled.<br />
+          While fire is an essential and natural part of many Australian
+          ecosystems, the frequency and intensity of recent fire seasons suggest
+          that climate conditions are amplifying their scale.<br />
+          Hotter, drier years combined with prolonged drought and reduced
+          rainfall are transforming once-cyclical fire events into
+          climate-driven crises.<br />
+          This raises an important question: are we witnessing a new normal in
+          the Australian fire landscape, or the consequence of decades of
+          unsustainable emission trends and land-use pressure?
         </p>
       </div>
     </div>
 
-    <div id="symbol_map"></div>
+    <!-- Symbol Map -->
+    <div class="containerMap">
+      <div id="symbol_map"></div>
+      <p class="source">
+        Source: NASA FIRMS Archive Download — Australia, 2019-08-01 to
+        2020-01-11.<br />
+        <a
+          href="https://earthdata.nasa.gov/earth-observation-data/near-real-time/firms/c6-mcd14dl#ed-firms-attributes"
+          target="_blank"
+        >
+          MODIS Fields
+        </a>
+      </p>
+    </div>
 
+    <!-- Text for Global Context -->
     <div class="container">
       <div class="text2">
-        <h2>How is Australia doing in the global context?</h2>
+        <h2>Australia in the Global Climate Balance</h2>
         <p>
-          CO2 emissions have been something Australia has been trying to reduce
-          and we can see the top emission producing industries and how Australia
-          has fared as compared to other global leading economies in the world.
+          The map of recent fire intensities reveals a troubling pattern, large
+          portions of rural and agricultural Australia are repeatedly affected
+          by severe bushfires.<br />
+          These areas form the economic and ecological backbone of the nation,
+          and while urban centres may remain relatively insulated, the damage to
+          regional livelihoods, biodiversity, and air quality is profound.
+        </p>
+        <p>
+          When we broaden our view globally, the story becomes even more
+          complex. Despite having a smaller population, Australia ranks among
+          the world’s highest CO₂ emitters per capita, placing it alongside
+          major industrial nations such as the United States and China. <br />
+          Raw emissions figures can obscure this imbalance, once normalised per
+          person, Australia’s footprint highlights the challenges of a
+          resource-intensive economy and its reliance on carbon-heavy energy
+          production.
+        </p>
+        <p>
+          Among domestic contributors, the electricity, gas, steam, and
+          air-conditioning sector stands out, producing more emissions than the
+          next nine industries combined. This dominance reflects the country’s
+          continued dependence on fossil fuels for power generation.<br />
+          Transitioning toward cleaner, renewable energy sources represents both
+          a significant challenge and an enormous opportunity, one that will
+          determine whether Australia can continue to thrive economically while
+          playing its part in stabilising the global climate system.
         </p>
       </div>
     </div>
 
+    <!-- Bubble and Industry Charts -->
     <div class="container">
-      <div id="bubble_plot" class="chart2"></div>
-      <div id="industry_emissions" class="chart2"></div>
+      <div class="chart-wrapper2">
+        <div id="bubble_plot" class="chart2"></div>
+        <p class="source">
+          Source: Waqar Ali. Country Comparison Dataset — USA and More.
+          Aggregated from public databases, global reports, and statistical
+          sources.<br />
+          <a
+            href="https://www.kaggle.com/datasets/waqi786/country-comparison-dataset-usa-and-more"
+            target="_blank"
+          >
+            Kaggle</a
+          >
+        </p>
+      </div>
+      <div class="chart-wrapper2">
+        <div id="industry_emissions" class="chart2"></div>
+        <p class="source">
+          Source: International Monetary Fund (IMF). Macroeconomic Climate
+          Indicators Dashboard.<br />
+          <a
+            href="https://climatedata.imf.org/pages/country-data"
+            target="_blank"
+          >
+            climatedata.imf.org</a
+          >
+        </p>
+      </div>
     </div>
 
     <script type="text/javascript">
       // Embed Rainfall Plot
-      var rainfallSpec = "js/rainfall.json";
-      vegaEmbed("#rainfall_chart", rainfallSpec)
-        .then(function (result) {
-          // Vega view instance accessible as result.view
-        })
-        .catch(console.error);
+      vegaEmbed("#rainfall_chart", "js/rainfall.json").catch(console.error);
 
       // Embed Temperature Change Plot
-      var temperatureSpec = "js/temperature.json";
-      vegaEmbed("#temperature_chart", temperatureSpec)
-        .then(function (result) {
-          // Vega view instance accessible as result.view
-        })
-        .catch(console.error);
+      vegaEmbed("#temperature_chart", "js/temperature.json").catch(
+        console.error
+      );
 
-      // Embed Bushfire_area Plot
-      var bushfireSpec = "js/bushfire_area.json";
-      vegaEmbed("#bushfire_chart", bushfireSpec)
-        .then(function (result) {
-          // Vega view instance accessible as result.view
-        })
-        .catch(console.error);
+      // Embed Bushfire Area Plot
+      vegaEmbed("#bushfire_chart", "js/bushfire_area.json").catch(
+        console.error
+      );
 
       // Embed Proportional Symbol Map
-      var mapSpec = "js/symbol_map.vg.json";
-      vegaEmbed("#symbol_map", mapSpec)
-        .then(function (result) {
-          // Vega view instance accessible as result.view
-        })
-        .catch(console.error);
+      vegaEmbed("#symbol_map", "js/symbol_map.vg.json").catch(console.error);
+
       // Embed Bubble Plot
-      var bubbleSpec = "js/bubble_plot.json";
-      vegaEmbed("#bubble_plot", bubbleSpec)
-        .then(function (result) {})
-        .catch(console.error);
+      vegaEmbed("#bubble_plot", "js/bubble_plot.json").catch(console.error);
 
       // Embed Industry Emissions Plot
-      var industrySpec = "js/industry_emissions.json";
-      vegaEmbed("#industry_emissions", industrySpec)
-        .then(function (result) {})
-        .catch(console.error);
+      vegaEmbed("#industry_emissions", "js/industry_emissions.json").catch(
+        console.error
+      );
     </script>
   </body>
 </html>

@@ -2,7 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Horizontal lollipop chart of top 10 industries by CO2 emissions in 2018.",
   "width": 350,
-  "height": 225,
+  "height": 290,
+  "title": {
+    "text": "Australia’s Top CO2-Emitting Industries",
+    "fontWeight": "bold"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/kaiheuheu/3179_DV2/refs/heads/main/data/04_CO2_Emissions_Emissions_Intensities_and_Emissions_Multipliers.csv",
     "format": { "type": "csv" }

@@ -1,11 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1100,
+  "width": 800,
   "height": 700,
-  "title": {
-    "text": "Where Fires Burn Brightest: Satellite-Detected Bushfire Intensity"
+
+  "background": "transparent",
+  "config": {
+    "view": { "stroke": "transparent" }
   },
+
+  "title": {
+    "text": "Fire Intensity Hotspots Across Australia",
+    "fontSize": 18,
+    "fontWeight": "bold"
+  },
+
   "projection": { "type": "mercator" },
+
   "params": [
     {
       "name": "brightness_min",
@@ -19,6 +29,7 @@
       }
     }
   ],
+
   "layer": [
     {
       "data": {
@@ -28,7 +39,11 @@
           "feature": "ne_50m_admin_1_states_provinces"
         }
       },
-      "mark": { "type": "geoshape", "fill": "black", "stroke": "white" }
+      "mark": {
+        "type": "geoshape",
+        "fill": "black",
+        "stroke": "transparent"
+      }
     },
     {
       "data": {
@@ -42,11 +57,7 @@
           }
         }
       },
-      "transform": [
-        {
-          "filter": "datum.bright_ti4 >= brightness_min"
-        }
-      ],
+      "transform": [{ "filter": "datum.bright_ti4 >= brightness_min" }],
       "mark": { "type": "circle", "opacity": 0.7 },
       "encoding": {
         "longitude": { "field": "longitude", "type": "quantitative" },

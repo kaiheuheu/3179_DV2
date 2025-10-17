@@ -2,6 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 350,
   "height": 225,
+  "title": {
+    "text": "Economic Growth and Carbon Responsibility: Australia Among Global Leaders",
+    "fontWeight": "bold"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/kaiheuheu/3179_DV2/refs/heads/main/data/country_comparison_large_dataset.csv"
   },
